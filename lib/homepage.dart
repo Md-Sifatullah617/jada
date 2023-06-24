@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:jada/api/api.dart';
 import 'package:jada/main.dart';
+import 'package:jada/model.dart/usermodel.dart';
 import 'package:jada/provider/view.dart';
+
+final apiProvider = Provider<ApiServices>((ref) => ApiServices());
+
+final userDataProvider = FutureProvider<List<UserModel>>((ref) {
+  return ref.read(apiProvider).getUser();
+});
 
 class MyHomePage extends ConsumerWidget {
   const MyHomePage({super.key});
