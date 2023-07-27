@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:jada/model.dart/usermodel.dart';
+import 'package:jada/model/usermodel.dart';
 
 class ApiServices {
   String endPoint = 'https://reqres.in/api/users?page=1';
